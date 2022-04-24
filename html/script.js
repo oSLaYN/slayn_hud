@@ -108,6 +108,7 @@ window.addEventListener("message", function (event) {
         }
         if (event.data.incar == true) {
           $('.huds').fadeIn(500);
+          $('#varSeatbelt').fadeIn(500);
           setProgressSpeed(event.data.speed,'.progress-speed');
           if (event.data.haskeys == true) {
             $('.vehiclekey').fadeOut(500);
@@ -116,10 +117,8 @@ window.addEventListener("message", function (event) {
           }
           if (event.data.seatbelt == true) {
             widthHeightSplit(100, $("#circleSetSeatbelt"));
-            $('#varSeatbelt').fadeIn(500);
           } else {
             widthHeightSplit(0, $("#circleSetSeatbelt"));
-            $('#varSeatbelt').fadeOut(500);
           }
           if (event.data.engine > 75) {
             $('.engineorange').fadeOut(500);
@@ -132,6 +131,7 @@ window.addEventListener("message", function (event) {
             $('.enginered').fadeIn(500);            
           }
         } else {
+          $('#varSeatbelt').fadeOut(500);
           $('.huds').fadeOut(500);
         }
       }
